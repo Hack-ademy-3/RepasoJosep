@@ -23,7 +23,7 @@
             @endguest
 
             @auth
-            <li><a class="dropdown-item" href="#">Hola, {{auth()->user()->name}}</a></li>
+            <li><a class="dropdown-item" href="{{route("user.profile")}}">Hola, {{auth()->user()->name}}</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#" id='logout-btn'>Logout</a></li>           
             <form action="/logout" method="POST" id='logout'>         

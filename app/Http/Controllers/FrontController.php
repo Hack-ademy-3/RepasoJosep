@@ -52,6 +52,7 @@ class FrontController extends Controller
         $request = $request->validate([
             "message"=>"required|max:160"
         ]);
+
         Contact:: findOrFail($id)->update($request);
         return back();
     }
@@ -62,5 +63,9 @@ class FrontController extends Controller
         $contact = Contact::findOrFail($id);
         $contact->delete();
         return redirect()->route("home");
+    }
+    public function profile()
+    {
+        return view("profile",['user'=>Auth::user()]);
     }
 }
