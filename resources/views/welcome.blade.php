@@ -5,12 +5,12 @@
    <h1>Contactes rebuts</h1>
     @foreach($contactos as $contacto)
     <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+  <a href="{{route("contact.details",['id'=>$contacto->id])}}" class="list-group-item list-group-item-action active" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
         <div>
-            <h5 class="mb-1">{{$contacto->name}}</h5>
-             <small>{{$contacto->email}}</small>
-        </div>
+            <h5 class="mb-1">{{$contacto->user->name}}</h5>
+             <small>{{$contacto->user->email}}</small>
+        </div> 
         <h6 class="mb-1">{{$contacto->created_at}}</h6>
 
     </div>
@@ -20,6 +20,8 @@
   
 </div>
     @endforeach
+    
     </div>
+    
 </div>
 @endsection
